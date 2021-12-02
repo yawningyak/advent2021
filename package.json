@@ -14,7 +14,6 @@
     "copy-files": "copyfiles -u 1 src/**/input.txt dist/",
     "build": "npm run clean && tsc && npm run copy-files",
     "watch": "tsc -w & nodemon -q -w dist dist/day-${DAY}/main.js",
-    "execute": "npm run build && node dist/day-${DAY}/main.js",
-    "test": "jest"
+    "execute": "npm run build && node dist/day-${DAY}/main.js"
   }
 }
