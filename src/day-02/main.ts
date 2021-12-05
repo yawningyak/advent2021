@@ -75,4 +75,4 @@ export function solveSecond(input: string): number {
 
 const data = fs.readFileSync(path.join(__dirname, "./input.txt"));
 console.log("First:", solveFirst(data.toString()));
-console.log('Second:', solveSecond(data.toString()));
+console.log("Second:", solveSecond(data.toString()));
