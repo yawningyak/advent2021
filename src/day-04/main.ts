@@ -7,7 +7,7 @@ import {
   product,
   range,
   sum,
-} from "../utils";
+} from "../utils/core";
 
 interface Problem {
   sequence: number[];

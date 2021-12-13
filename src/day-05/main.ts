@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { parseInts, parseStrings, sum } from "../utils";
+import { parseInts, parseStrings, sum } from "../utils/core";
 
 interface Line {
   p1: [number, number];

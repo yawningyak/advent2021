@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { parseInts, range, sum } from "../utils";
+import { parseInts, range, sum } from "../utils/core";
 
 function parseInput(input: string): number[] {
   return parseInts(input, ",");

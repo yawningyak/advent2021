@@ -28,7 +28,14 @@ export function range(len: number): number[] {
   return [...Array(len).keys()];
 }
 
-export function getMinMax(matrix: number[][]): {
+/**
+ * Given a M x N matrix, where each cell is addressible by matrix[n][m] where
+ * m is the row index and n is the column index, return the inclusive index
+ * ranges for rows and columns.
+ * @param matrix
+ * @returns
+ */
+export function getRanges(matrix: number[][]): {
   rowIndexMin: number;
   rowIndexMax: number;
   colIndexMin: number;
@@ -41,5 +48,10 @@ export function getMinMax(matrix: number[][]): {
   const rowIndexMax = matrix.length - 1;
   const colIndexMin = 0;
   const colIndexMax = matrix[0].length - 1;
-  return { rowIndexMin, rowIndexMax, colIndexMin, colIndexMax };
+  return {
+    rowIndexMin,
+    rowIndexMax,
+    colIndexMin,
+    colIndexMax,
+  };
 }

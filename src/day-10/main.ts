@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { parseStrings, sum } from "../utils";
+import { parseStrings, sum } from "../utils/core";
 
 type Char = "{" | "}" | "[" | "]" | "(" | ")" | "<" | ">";
 

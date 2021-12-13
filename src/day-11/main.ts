@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { getMinMax, parseInts, parseStrings, range } from "../utils";
+import { getRanges, parseInts, parseStrings, range } from "../utils/core";
 
 interface Position {
   rowIndex: number;
@@ -36,7 +36,7 @@ function simulateSingleStep(startingEnergyLevels: number[][]): {
   flashes: number;
 } {
   const { rowIndexMin, rowIndexMax, colIndexMin, colIndexMax } =
-    getMinMax(startingEnergyLevels);
+    getRanges(startingEnergyLevels);
 
   // First, increment every octopus's energy level by 1
   let energyLevels = startingEnergyLevels.map((row) =>

@@ -1,4 +1,4 @@
-import { parseInts } from "../../utils";
+import { parseInts } from "../../utils/core";
 import { getGeometricCost, solveFirst, solveSecond } from "../main";
 
 describe("getGeometricCost", () => {

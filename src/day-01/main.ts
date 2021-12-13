@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { parseInts, sum } from "../utils";
+import { parseInts, sum } from "../utils/core";
 
 export function countIncreases(values: number[], windowSize = 1): number {
   return values.reduce((increases, currentValue, currentIndex, array) => {

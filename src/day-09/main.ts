@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { parseInts, parseStrings, product, sum } from "../utils";
+import { parseInts, parseStrings, product, sum } from "../utils/core";
 
 function parseInput(input: string): number[][] {
   return parseStrings(input, "\n").map((line) => parseInts(line, ""));

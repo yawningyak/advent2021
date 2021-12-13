@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { range } from "../utils";
+import { range } from "../utils/core";
 
 // number[x][y] where x is the row index and y is digit index (left to right)
 function parseInput(input: string): number[][] {
