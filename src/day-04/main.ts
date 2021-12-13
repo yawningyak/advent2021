@@ -1,6 +1,13 @@
 import fs from "fs";
 import path from "path";
-import { contains, parseInts, parseStrings, product, sum } from "../utils";
+import {
+  contains,
+  parseInts,
+  parseStrings,
+  product,
+  range,
+  sum,
+} from "../utils";
 
 interface Problem {
   sequence: number[];
@@ -32,7 +39,7 @@ function parseInput(input: string): Problem {
       const combo = { boardId, members };
       board.rows.push(combo);
     });
-    const columnIndices = [...Array(board.rows[0].members.length).keys()];
+    const columnIndices = range(board.rows[0].members.length);
     columnIndices.forEach((columnIndex) => {
       const members = board.rows.map((row) => row.members[columnIndex]);
       const combo = { boardId, members };
@@ -78,7 +85,7 @@ function getBingoBoardIds(problem: Problem, calledIndex: number): Set<number> {
 
 export function solveFirst(input: string): number {
   const problem = parseInput(input);
-  const calledIndices = [...Array(problem.sequence.length).keys()];
+  const calledIndices = range(problem.sequence.length);
   let solution = undefined;
   for (const calledIndex of calledIndices) {
     const calledNumber = problem.sequence[calledIndex];
@@ -106,7 +113,7 @@ export function solveFirst(input: string): number {
 
 export function solveSecond(input: string): number {
   const problem = parseInput(input);
-  const calledIndices = [...Array(problem.sequence.length).keys()];
+  const calledIndices = range(problem.sequence.length);
   const boardIdsNotYetWon = new Set(problem.boardsById.keys());
   let solution = undefined;
   for (const calledIndex of calledIndices) {

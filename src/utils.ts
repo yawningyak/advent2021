@@ -23,3 +23,23 @@ export function parseStrings(
 export function parseInts(input: string, delimiter: string | RegExp): number[] {
   return parseStrings(input, delimiter).map((numstr) => parseInt(numstr));
 }
+
+export function range(len: number): number[] {
+  return [...Array(len).keys()];
+}
+
+export function getMinMax(matrix: number[][]): {
+  rowIndexMin: number;
+  rowIndexMax: number;
+  colIndexMin: number;
+  colIndexMax: number;
+} {
+  if (matrix.length === 0 || matrix[0].length === 0) {
+    return { rowIndexMin: 0, rowIndexMax: 0, colIndexMin: 0, colIndexMax: 0 };
+  }
+  const rowIndexMin = 0;
+  const rowIndexMax = matrix.length - 1;
+  const colIndexMin = 0;
+  const colIndexMax = matrix[0].length - 1;
+  return { rowIndexMin, rowIndexMax, colIndexMin, colIndexMax };
+}

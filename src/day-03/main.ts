@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { range } from "../utils";
 
 // number[x][y] where x is the row index and y is digit index (left to right)
 function parseInput(input: string): number[][] {
@@ -56,7 +57,7 @@ export function solveFirst(input: string): number {
     return 0;
   }
   const bitCount = binaryNumbers[0].length;
-  const bitIndices = [...Array(bitCount).keys()];
+  const bitIndices = range(bitCount);
   const gammaBits = bitIndices.map(() => 0);
   const epsilonBits = bitIndices.map(() => 0);
   bitIndices.forEach((bitIndex) => {
@@ -80,7 +81,7 @@ function reduceNumbers(
   freqComparator: (freq1: number, freq2: number) => number
 ): number[][] {
   const bitCount = binaryNumbers[0].length;
-  const bitIndices = [...Array(bitCount).keys()];
+  const bitIndices = range(bitCount);
   let reducedNumbers = [...binaryNumbers];
   bitIndices.forEach((bitIndex) => {
     const currentBits = reducedNumbers.map((bits: number[]) => bits[bitIndex]);

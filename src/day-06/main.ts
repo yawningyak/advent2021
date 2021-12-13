@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { parseInts, sum } from "../utils";
+import { parseInts, range, sum } from "../utils";
 
 function parseInput(input: string): number[] {
   return parseInts(input, ",");
@@ -31,7 +31,7 @@ export function simulateOneFish(
 
   if (reproductionDelay !== Infinity) {
     const descendantCount = sum(
-      [...Array(childCount).keys()].map((childIndex) => {
+      range(childCount).map((childIndex) => {
         const birthday = initialTimer + childIndex * reproductionCycle + 1;
         return simulateOneFish(
           days - birthday,
